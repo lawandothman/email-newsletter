@@ -369,6 +369,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "email_newsletter"
+version = "0.1.0"
+dependencies = [
+ "actix-web",
+]
+
+[[package]]
 name = "encoding_rs"
 version = "0.8.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -769,13 +776,6 @@ name = "regex-syntax"
 version = "0.6.28"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "456c603be3e8d448b072f410900c09faf164fbce2d480456f50eea6e25f9c848"
-
-[[package]]
-name = "rust-zero2prod"
-version = "0.1.0"
-dependencies = [
- "actix-web",
-]
 
 [[package]]
 name = "rustc_version"
