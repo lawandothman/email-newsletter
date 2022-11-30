@@ -40,7 +40,7 @@ jobs:
           components: rustfmt
 
       - name: Run cargo-fmt
-      - uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@v1
         with:
           command: fmt
           args: --all -- --check
@@ -60,7 +60,7 @@ jobs:
           components: clippy
 
       - name: Run clippy
-      - uses: actions-rs/clippy-check@v1
+        uses: actions-rs/clippy-check@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           args: -- -D warnings
