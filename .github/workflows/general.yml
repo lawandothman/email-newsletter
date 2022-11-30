@@ -63,15 +63,16 @@ jobs:
             --no-default-features
             --locked
 
-        - name: Migrate database
-          run: |
+      - name: Migrate database
+        run: |
             sudo apt-get install libpq-dev -y
             SKIP_DOCKER=true ./scripts/init_db.sh
 
-        - name: Run cargo test
-          uses: actions-rs/cargo@v1
-          with:
-            command: test
+      - name: Run cargo test
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+
   fmt:
     name: Rustfmt
     runs-on: ubuntu-latest
@@ -139,16 +140,16 @@ jobs:
             --no-default-features
             --locked
 
-        - name: Migrate database
-          run: |
-            sudo apt-get install libpq-dev -y
-            SKIP_DOCKER=true ./scripts/init_db.sh
+      - name: Migrate database
+        run: |
+          sudo apt-get install libpq-dev -y
+          SKIP_DOCKER=true ./scripts/init_db.sh
 
-        - name: Run clippy
-          uses: actions-rs/clippy-check@v1
-          with:
-            token: ${{ secrets.GITHUB_TOKEN }}
-            args: -- -D warnings
+      - name: Run clippy
+        uses: actions-rs/clippy-check@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          args: -- -D warnings
 
   coverage:
     name: Code coverage
@@ -196,13 +197,13 @@ jobs:
             --no-default-features
             --locked
 
-        - name: Migrate database
-          run: |
-            sudo apt-get install libpq-dev -y
-            SKIP_DOCKER=true ./scripts/init_db.sh
+      - name: Migrate database
+        run: |
+          sudo apt-get install libpq-dev -y
+          SKIP_DOCKER=true ./scripts/init_db.sh
 
-        - name: Run cargo-tarpaulin
-          uses: actions-rs/tarpaulin@v0.1
-          with:
-            args: '--ignore-tests --avoid-cfg-tarpaulin'
+      - name: Run cargo-tarpaulin
+        uses: actions-rs/tarpaulin@v0.1
+        with:
+          args: '--ignore-tests --avoid-cfg-tarpaulin'
 
