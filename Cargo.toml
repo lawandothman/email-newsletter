@@ -15,6 +15,7 @@ name="email_newsletter"
 actix-web="4"
 tokio = {version = "1", features = ["macros", "rt-multi-thread"]}
 serde ={version = "1", features = ["derive"]}
+config = "0.13.2"
 [dependencies.sqlx]
 version = "0.6.2"
 default-features = false
