@@ -14,7 +14,7 @@ name="email_newsletter"
 [dependencies]
 actix-web="4.2.1"
 chrono = "0.4.23"
-config = "0.13.2"
+config = "0.13.3"
 secrecy = { version = "0.8.0", features = ["serde"] }
 serde ={version = "1.0.148", features = ["derive"]}
 sqlx = {version="0.6.2", default-features = false, features = ["runtime-actix-rustls", "macros", "postgres", "uuid", "chrono", "migrate"]}
